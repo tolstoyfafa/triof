@@ -5,8 +5,8 @@ import json
 import operator
 import requests
 
-url = ''
-api_keys = ''
+url = 'https://ipssicustomvision.cognitiveservices.azure.com/customvision/v3.0/Prediction/b1479e9d-0ce5-46a3-960e-01e75188c96c/classify/iterations/Iteration1/image'
+api_keys = 'd65119d47253495ea693c874effbec6a'
 headers={'content-type':'application/octet-stream','Prediction-Key':api_keys}
 
 def open_waste_slot():
@@ -99,5 +99,6 @@ def take_trash_picture():
 def pred_func(data):
     print(data)
     r =requests.post(url,data=data,headers=headers).content
+    print(r)
     pred = {x["tagName"]:x["probability"]  for x in json.loads(r)["predictions"]}
     return max(pred.items(), key=operator.itemgetter(1))[0]
