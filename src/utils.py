@@ -6,7 +6,7 @@ import operator
 import requests
 
 url = 'https://ipssicustomvision.cognitiveservices.azure.com/customvision/v3.0/Prediction/b1479e9d-0ce5-46a3-960e-01e75188c96c/classify/iterations/Iteration1/image'
-api_keys = 'd65119d47253495ea693c874effbec6a'
+api_keys = ''
 headers={'content-type':'application/octet-stream','Prediction-Key':api_keys}
 
 def open_waste_slot():
