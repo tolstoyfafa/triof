@@ -22,8 +22,8 @@ def insert():
 def pick_type():
     close_waste_slot()
     pic = take_trash_picture()
-    pred = pred_func(pic)
-    return render_template('type.html',prediction=pred)
+    #pred = pred_func(pic)
+    return render_template('type.html')#,prediction=pred)
 
 
 @app.route('/confirmation', methods=['POST'])
